@@ -1,0 +1,74 @@
+/* styles.css */
+
+/* Custom Inputs Styling (Material / Google Style) */
+.editor-input {
+    background-color: #f8fafc; /* slate-50 */
+    border: 1px solid #e2e8f0; /* slate-200 */
+    border-radius: 0.75rem; /* rounded-xl */
+    padding: 0.625rem 1rem;
+    font-size: 0.875rem;
+    color: #1e293b;
+    outline: none;
+    transition: all 0.2s ease-in-out;
+}
+
+.editor-input:hover {
+    background-color: #f1f5f9; /* slate-100 */
+    border-color: #cbd5e1;
+}
+
+.editor-input:focus {
+    background-color: #ffffff;
+    border-color: #3b82f6; /* blue-500 */
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.editor-input::placeholder {
+    color: #94a3b8;
+}
+
+/* Remove numerical up/down arrows from inputs */
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none; 
+    margin: 0; 
+}
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+/* A4 Wrapper properties */
+/* A4 aspect ratio is approx 1:1.414. Standard A4 is 210x297mm */
+.a4-wrapper {
+    /* Base configuration already in Tailwind classes, but we keep this class just in case for printing rules */
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+}
+
+/* Specific CSS for scrolling inside the editor cleanly */
+aside::-webkit-scrollbar {
+    width: 6px;
+}
+aside::-webkit-scrollbar-track {
+    background: transparent;
+}
+aside::-webkit-scrollbar-thumb {
+    background-color: #cbd5e1;
+    border-radius: 10px;
+}
+
+/* Row entrance animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.3s ease forwards;
+}
